@@ -1,6 +1,6 @@
 import { AtpAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
-// import { CronJob } from 'cron';
+import { CronJob } from 'cron';
 import * as process from 'process';
 
 dotenv.config();
@@ -15,11 +15,11 @@ async function main() {
     await agent.login({ identifier: process.env.BLUESKY_USERNAME!, password: process.env.BLUESKY_PASSWORD!})
 
     const inspiration = await quote()
-    await agent.post({
-        text: inspiration,
-        visibility: 'public',
-    });
-    console.log("Just posted!")
+    // await agent.post({
+    //     text: inspiration,
+    //     visibility: 'public',
+    // });
+    console.log(inspiration);
 }
 
 async function quote(){
@@ -35,10 +35,8 @@ async function quote(){
 main();
 
 
-// Run this on a cron job
-// const scheduleExpressionMinute = '* * * * *'; // Run once every minute for testing
-// const scheduleExpression = '0 */3 * * *'; // Run once every three hours in prod
+const scheduleExpression = '0 */4 * * *'; // Every 4 hours
 
-// const job = new CronJob(scheduleExpression, main); // change to scheduleExpressionMinute for testing
+const job = new CronJob(scheduleExpression, main);
 
-// job.start();
+job.start();

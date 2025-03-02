@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { AtpAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
-// import { CronJob } from 'cron';
+import { CronJob } from 'cron';
 import * as process from 'process';
 dotenv.config();
 const agent = new AtpAgent({
@@ -20,11 +20,11 @@ function main() {
         console.log("Starting to post...");
         yield agent.login({ identifier: process.env.BLUESKY_USERNAME, password: process.env.BLUESKY_PASSWORD });
         const inspiration = yield quote();
-        yield agent.post({
-            text: inspiration,
-            visibility: 'public',
-        });
-        console.log("Just posted!");
+        // await agent.post({
+        //     text: inspiration,
+        //     visibility: 'public',
+        // });
+        console.log(inspiration);
     });
 }
 function quote() {
@@ -39,9 +39,7 @@ function quote() {
     });
 }
 main();
-// Run this on a cron job
-// const scheduleExpressionMinute = '* * * * *'; // Run once every minute for testing
-// const scheduleExpression = '0 */3 * * *'; // Run once every three hours in prod
-// const job = new CronJob(scheduleExpression, main); // change to scheduleExpressionMinute for testing
-// job.start();
+const scheduleExpression = '0 */4 * * *'; // Every 4 hours
+const job = new CronJob(scheduleExpression, main);
+job.start();
 //# sourceMappingURL=index.js.map
