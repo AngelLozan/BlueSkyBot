@@ -20,10 +20,10 @@ function main() {
         console.log("Starting to post...");
         yield agent.login({ identifier: process.env.BLUESKY_USERNAME, password: process.env.BLUESKY_PASSWORD });
         const inspiration = yield quote();
-        // await agent.post({
-        //     text: inspiration,
-        //     visibility: 'public',
-        // });
+        yield agent.post({
+            text: inspiration,
+            visibility: 'public',
+        });
         console.log(inspiration);
     });
 }

@@ -15,10 +15,10 @@ async function main() {
     await agent.login({ identifier: process.env.BLUESKY_USERNAME!, password: process.env.BLUESKY_PASSWORD!})
 
     const inspiration = await quote()
-    // await agent.post({
-    //     text: inspiration,
-    //     visibility: 'public',
-    // });
+    await agent.post({
+        text: inspiration,
+        visibility: 'public',
+    });
     console.log(inspiration);
 }
 
