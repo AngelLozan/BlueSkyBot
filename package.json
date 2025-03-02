@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.13.8",
+    "typescript": "^5.8.2"
+  },
+  "name": "bskybot",
+  "version": "0.1.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "post" : "node dist/index.js"
+  },
+  "keywords": [
+    "bluesky",
+    "bot"
+  ],
+  "author": "Scott Lozano",
+  "license": "ISC",
+  "description": "A bot to post inspirational quotes to a bluesky account",
+  "dependencies": {
+    "@atproto/api": "^0.14.7",
+    "cron": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "ts-node": "^10.9.2"
+  }
+}
