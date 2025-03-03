@@ -1,6 +1,6 @@
 import { AtpAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
-import { CronJob } from 'cron';
+// import { CronJob } from 'cron';
 import * as process from 'process';
 
 dotenv.config();
@@ -35,8 +35,8 @@ async function quote(){
 main();
 
 
-const scheduleExpression = '0 */4 * * *'; // Every 4 hours
+// const scheduleExpression = '0 */4 * * *'; // Every 4 hours
 
-const job = new CronJob(scheduleExpression, main);
+// const job = new CronJob(scheduleExpression, main);
 
-job.start();
+// job.start();

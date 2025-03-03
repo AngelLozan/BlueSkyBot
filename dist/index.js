@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { AtpAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
-import { CronJob } from 'cron';
+// import { CronJob } from 'cron';
 import * as process from 'process';
 dotenv.config();
 const agent = new AtpAgent({
@@ -39,7 +39,7 @@ function quote() {
     });
 }
 main();
-const scheduleExpression = '0 */4 * * *'; // Every 4 hours
-const job = new CronJob(scheduleExpression, main);
-job.start();
+// const scheduleExpression = '0 */4 * * *'; // Every 4 hours
+// const job = new CronJob(scheduleExpression, main);
+// job.start();
 //# sourceMappingURL=index.js.map
