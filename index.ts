@@ -14,7 +14,7 @@ async function main() {
     console.log("Starting to post...")
     await agent.login({ identifier: process.env.BLUESKY_USERNAME!, password: process.env.BLUESKY_PASSWORD!})
 
-    const inspiration = await quote()
+    const inspiration = await quote();
     await agent.post({
         text: inspiration,
         visibility: 'public',
@@ -39,4 +39,4 @@ main();
 
 // const job = new CronJob(scheduleExpression, main);
 
-// job.start();
+// job.start(); * * * * * /usr/bin/node /path/to/your/project/script.js >> /path/to/your/project/logs/myscript.log 2>&1

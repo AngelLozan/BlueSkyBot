@@ -41,5 +41,5 @@ function quote() {
 main();
 // const scheduleExpression = '0 */4 * * *'; // Every 4 hours
 // const job = new CronJob(scheduleExpression, main);
-// job.start();
+// job.start(); * * * * * /usr/bin/node /path/to/your/project/script.js >> /path/to/your/project/logs/myscript.log 2>&1
 //# sourceMappingURL=index.js.map
