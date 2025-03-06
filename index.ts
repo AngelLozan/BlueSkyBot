@@ -6,7 +6,7 @@ import * as process from 'process';
 dotenv.config();
 
 const agent = new AtpAgent({
-    service: 'https://angellozan.live',
+    service: process.env.SERVICE!,
   })
 
 

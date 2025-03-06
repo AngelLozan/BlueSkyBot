@@ -13,7 +13,7 @@ import * as dotenv from 'dotenv';
 import * as process from 'process';
 dotenv.config();
 const agent = new AtpAgent({
-    service: 'https://angellozan.live',
+    service: process.env.SERVICE,
 });
 export const main = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log("Starting to post...");
