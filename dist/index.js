@@ -15,18 +15,16 @@ dotenv.config();
 const agent = new AtpAgent({
     service: 'https://angellozan.live',
 });
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("Starting to post...");
-        yield agent.login({ identifier: process.env.BLUESKY_USERNAME, password: process.env.BLUESKY_PASSWORD });
-        const inspiration = yield quote();
-        yield agent.post({
-            text: inspiration,
-            visibility: 'public',
-        });
-        console.log(inspiration);
+export const main = () => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("Starting to post...");
+    yield agent.login({ identifier: process.env.BLUESKY_USERNAME, password: process.env.BLUESKY_PASSWORD });
+    const inspiration = yield quote();
+    yield agent.post({
+        text: inspiration,
+        visibility: 'public',
     });
-}
+    console.log(inspiration);
+});
 function quote() {
     return __awaiter(this, void 0, void 0, function* () {
         let req = yield fetch('https://zenquotes.io/api/random');

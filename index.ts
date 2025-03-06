@@ -10,7 +10,7 @@ const agent = new AtpAgent({
   })
 
 
-async function main() {
+export const main = async () => {
     console.log("Starting to post...")
     await agent.login({ identifier: process.env.BLUESKY_USERNAME!, password: process.env.BLUESKY_PASSWORD!})
 

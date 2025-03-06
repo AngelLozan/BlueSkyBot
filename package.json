@@ -1,6 +1,10 @@
 {
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.13.8",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
     "typescript": "^5.8.2"
   },
   "name": "bskybot",
@@ -9,7 +13,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "post" : "node dist/index.js"
+    "post": "node dist/index.js",
+    "test": "jest --watch"
   },
   "keywords": [
     "bluesky",
