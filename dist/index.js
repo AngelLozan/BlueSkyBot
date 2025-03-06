@@ -37,7 +37,7 @@ function quote() {
         console.log(author);
         const bannedAuthors = ['Christopher Columbus', 'Elon Musk', 'Ronald Reagan', 'Theodore Roosevelt', 'Walt Disney', 'William Faulkner', 'Winston Churchill', 'Benjamin Franklin', 'Ayn Rand'];
         if (bannedAuthors.includes(author)) {
-            return quote();
+            return yield quote();
         }
         return `${quote} - ${author}`;
     });
